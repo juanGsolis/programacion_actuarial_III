@@ -1,0 +1,94 @@
+---
+title: "Calificaciones"
+author: "Gutierrez Solis Juan Manuel"
+date: "7 de febrero de 2017"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+Otoñ0 2013
+
+Programacion Actuarial- 6
+
+Intr. a la Profesion Actuarial- 8
+
+DHPC - 9
+
+
+Primavera 2014
+
+Teoria del Interes I - 7
+
+Contabilidad General - 8
+
+Formacion Humana y Social - 8
+
+Concepctos de Calculo - 9
+
+Geometria Analitica - 9
+
+Otoño 2014
+ 
+ Teoria del Interes II - 8
+ 
+ Microeconomia - 9
+ 
+ Teoria De Ecuaciones - 9
+ 
+ Primavera 2015
+ 
+ Sistema Financiero Mexicano - 9
+ 
+ Macroeconomia - 9
+ 
+ Matematicas Basicas - 7
+ 
+ Problemas de Mat. Basicas - 7
+ 
+ Otoño 2015
+ 
+ DHTIC - 9
+ 
+ Calculo Diferencial - 9
+ 
+ Algebra Lineal I - 7
+ 
+ Primavera 2016
+ 
+ Demografia I - 8
+ 
+ Derivados Financieros - 6
+ 
+ Reg. Acad. y Cient. del Español - 7
+ 
+ Otoño 2016
+
+Programacion Actuarial II - 8
+
+Legislacion de Seguros - 9
+
+Finanzas Coorporativas - 8
+
+Lengua Extranjera I - 8
+
+Lengua Extranjera II - 8
+
+Lengua Extranjera III - 8
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
