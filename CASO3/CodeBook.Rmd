@@ -1,0 +1,54 @@
+---
+title: "CodeBook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+plot(cars)
+```
+Se realizaron experimentos en un grupo de 30 sujetos dentro de un margen de edad de 19 a 48 años, cada una realizando 6 actividades: caminar, caminar escaleras arriba, caminar escaleras abajo, estar sentado, estar quieto y estar acostado, todo mientras utilizaban un teléfono Samsung Galaxy SII en la cintura.
+
+Con un acelerómetro incorporado y un giroscopio, se capturó la aceleración lineal 3-axial y la velocidad angular 3-axial a una velocidad constante de 50 Hz. Los experimentos fueron grabados en vídeo para etiquetar los datos de forma manual. El conjunto de datos obtenidos se ha dividido aleatoriamente en dos grupos, en los que se seleccionó el 70% de los voluntarios para la generación de los datos de entrenamiento y 30% para los datos de prueba.
+
+Las señales del sensor (acelerómetro y giroscopio) fueron pre-procesados mediante la aplicación de filtros de ruido y luego se muestrean en deslizamiento de ancho fijo ventanas de 2,56 seg y 50% de solapamiento. La señal de aceleración del sensor, que tiene componentes gravitacionales y el movimiento del cuerpo, se separó usando un filtro de paso bajo Butterworth en aceleración cuerpo y la gravedad. La fuerza de la gravedad se supone que tiene sólo componentes de baja frecuencia, por lo tanto, se utilizó un filtro con 0,3 Hz frecuencia de corte. A partir de cada ventana, un vector de características se obtuvo mediante el cálculo de las variables de tiempo y el dominio de la frecuencia.
+
+####Los Datos Originales
+
+Estos contienen:
+
+-Un vector de 561 variables de tiempo y el dominio de la frecuencia. -Sus etiquetas de actividades. -Un identificador del voluntario que participó en el experimento.
+
+Las señales fueron utilizadas para estimar variables del vector para cada patrón: 'XYZ' es utilizado para denotar señales de 3 ejes en direcciones X, Y y Z.
+
+En un listado tenemos las características:
+
+tBodyAcc-XYZ tGravityAcc-XYZ tBodyAccJerk-XYZ tBodyGyro-XYZ tBodyGyroJerk-XYZ tBodyAccMag tGravityAccMag tBodyAccJerkMag tBodyGyroMag tBodyGyroJerkMag fBodyAcc-XYZ fBodyAccJerk-XYZ fBodyGyro-XYZ fBodyAccMag fBodyAccJerkMag fBodyGyroMag fBodyGyroJerkMag
+
+Las variables obtenidas a partir de estas señales son:
+
+-mean(): Mean value -std(): Standard deviation -mad(): Median absolute deviation -max(): Largest value in array -min(): Smallest value in array -sma(): Signal magnitude area -energy(): Energy measure. Sum of the squares divided by the number of values. -iqr(): Interquartile range -entropy(): Signal entropy -arCoeff(): Autorregresion coefficients with Burg order equal to 4 -correlation(): correlation coefficient between two signals -maxInds(): index of the frequency component with largest magnitude -meanFreq(): Weighted average of the frequency components to obtain a mean frequency -skewness(): skewness of the frequency domain signal -kurtosis(): kurtosis of the frequency domain signal -bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window. -angle(): Angle between to vectors.
+
+Además fueron obtenidos datos extras mediante las señales en una muestra de ventana de señal y son utilizados en la variable angle():
+
+gravityMean tBodyAccMean tBodyAccJerkMean tBodyGyroMean tBodyGyroJerkMean
+
+####Transformaciones
+
+Las transformaciones aplicadas a la base de datos original fueron:
+
+-Unir los dos archivos de datos de test y training, para crear un solo conjunto de datos
+
+-Extraer únicamente las medidas de media y desviación estándar de cada medición dejando únicamente 66 datos en el vector.
+
+-Renombrar las actividades para describir de mejor manera la base de datos y asignar valores entre 1 y 30 para cada sujeto de prueba
+
+-Se colocaron las etiquetas apropiadas en la base de datos con nombres de variables que las describan
+
+-Se creó una segunda base de datos ya final con el promedio de cada variable para cada actividad y cada sujeto de 180 filas por 68 columnas.
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
